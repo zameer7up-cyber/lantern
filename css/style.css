@@ -86,7 +86,7 @@ h3 { margin: 0 0 0.4rem; color: var(--navy); }
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 0.8rem;
 }
-.cards article, .qr-card {
+.cards article {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -97,19 +97,6 @@ h3 { margin: 0 0 0.4rem; color: var(--navy); }
 .steps li { margin: 0.55rem 0; }
 
 .pay { scroll-margin-top: 4.5rem; }
-
-.qr-card {
-  width: min(100%, 320px);
-  text-align: center;
-  margin: 1rem 0;
-}
-.qr-card img {
-  width: min(100%, 260px);
-  height: auto;
-  display: block;
-  margin: 0 auto 0.6rem;
-}
-.site-qr { width: min(100%, 180px) !important; }
 
 .after { max-width: 38rem; }
 
