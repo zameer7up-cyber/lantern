@@ -70,11 +70,9 @@
 
     <section id="pay" class="pay">
       <h2>Payment</h2>
-      <p>The guidance fee is <strong>16000 rupees</strong>, paid once, for one path. Scan the QR code in your payment app. University fees, the blocked account, the visa fee, and translations are not included.</p>
+      <p>The guidance fee is <strong>16000 rupees</strong>, paid once, for one path. University fees, the blocked account, the visa fee, and translations are not included.</p>
       <figure class="qr-card">
-        <img id="qr" src="images/payment-qr.png" alt="Payment QR code for 16000 rupees">
         <img class="site-qr" src="images/website-qr.png" alt="Scan to open the Lantern website">
-        <figcaption id="qr-note">Place your QR code file at <code>images/payment-qr.png</code> and this box will show it.</figcaption>
       </figure>
       <p class="after">After you pay, send a screenshot on WhatsApp with your name and the path: Bachelor, Master, or Ausbildung.</p>
       <a class="button" href="https://wa.me/4915567550791?text=Hello%20Lantern.%20I%20have%20paid%2016000%20rupees." target="_blank" rel="noopener">Send payment proof on WhatsApp</a>
@@ -91,16 +89,5 @@
     <p>Lantern. One-time fee 16000 rupees. Not a university and not the embassy.</p>
   </footer>
 
-  <script>
-    var qr = document.getElementById("qr");
-    var note = document.getElementById("qr-note");
-    qr.addEventListener("error", function () {
-      qr.hidden = true;
-      note.hidden = false;
-    });
-    qr.addEventListener("load", function () {
-      note.hidden = true;
-    });
-  </script>
 </body>
 </html>
