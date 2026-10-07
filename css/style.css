@@ -1,10 +1,11 @@
 :root {
-  --navy: #0b1f3a;
+  --navy: #011530;
   --gold: #c4a35a;
-  --ink: #1c2430;
-  --paper: #f7f4ee;
+  --ink: #f4efe4;
+  --paper: #011530;
   --card: #fffdf8;
   --line: #e4dcc8;
+  --card-ink: #1c2430;
 }
 
 * { box-sizing: border-box; }
@@ -17,7 +18,7 @@ body {
   line-height: 1.5;
 }
 
-a { color: var(--navy); }
+a { color: var(--gold); }
 
 .top {
   display: flex;
@@ -29,6 +30,7 @@ a { color: var(--navy); }
   color: #fff;
   position: sticky;
   top: 0;
+  border-bottom: 1px solid rgba(196, 163, 90, 0.45);
 }
 
 .brand {
@@ -44,7 +46,7 @@ a { color: var(--navy); }
 }
 
 .brand img {
-  height: 1.55rem;
+  height: 2.75rem;
   width: auto;
   display: block;
 }
@@ -62,9 +64,9 @@ main { max-width: 920px; margin: 0 auto; padding: 1.5rem 1.2rem 3rem; }
   font-size: 0.8rem;
   margin: 0 0 0.4rem;
 }
-h1 { font-size: clamp(2rem, 5vw, 3.1rem); line-height: 1.15; margin: 0 0 0.8rem; color: var(--navy); }
-h2 { color: var(--navy); margin: 2.2rem 0 0.8rem; font-size: 1.7rem; }
-h3 { margin: 0 0 0.4rem; color: var(--navy); }
+h1 { font-size: clamp(2rem, 5vw, 3.1rem); line-height: 1.15; margin: 0 0 0.8rem; color: #fff; }
+h2 { color: var(--gold); margin: 2.2rem 0 0.8rem; font-size: 1.7rem; }
+h3 { margin: 0 0 0.4rem; color: var(--card-ink); }
 .lead { font-size: 1.15rem; max-width: 40rem; }
 .fee { font-size: 1.2rem; }
 
@@ -72,14 +74,14 @@ h3 { margin: 0 0 0.4rem; color: var(--navy); }
 
 .button {
   display: inline-block;
-  background: var(--navy);
-  color: #fff;
+  background: var(--gold);
+  color: var(--navy);
   text-decoration: none;
   padding: 0.75rem 1.1rem;
   border-radius: 999px;
-  border: 1px solid var(--navy);
+  border: 1px solid var(--gold);
 }
-.button.ghost { background: transparent; color: var(--navy); }
+.button.ghost { background: transparent; color: var(--gold); }
 
 .cards {
   display: grid;
@@ -88,10 +90,12 @@ h3 { margin: 0 0 0.4rem; color: var(--navy); }
 }
 .cards article {
   background: var(--card);
+  color: var(--card-ink);
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 1rem 1.05rem;
 }
+.cards article a { color: var(--navy); }
 
 .steps { padding-left: 1.2rem; }
 .steps li { margin: 0.55rem 0; }
@@ -106,6 +110,7 @@ footer {
   text-align: center;
   padding: 1rem;
   font-size: 0.92rem;
+  border-top: 1px solid rgba(196, 163, 90, 0.45);
 }
 
 @media (max-width: 640px) {
