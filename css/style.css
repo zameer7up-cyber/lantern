@@ -85,7 +85,7 @@ h3 { margin: 0 0 0.4rem; color: var(--card-ink); }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.8rem;
 }
 .cards article {
@@ -116,4 +116,5 @@ footer {
 @media (max-width: 640px) {
   .top { flex-wrap: wrap; }
   .top nav { width: 100%; }
+  .cards { grid-template-columns: 1fr; }
 }
