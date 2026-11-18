@@ -116,6 +116,34 @@ h3 { margin: 0 0 0.4rem; color: var(--card-ink); }
   border: 1px solid rgba(196, 163, 90, 0.45);
 }
 
+.ask-form {
+  display: grid;
+  gap: 0.8rem;
+  max-width: 560px;
+  padding: 1.1rem;
+  background: var(--card);
+  color: var(--card-ink);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.ask-form label { display: grid; gap: 0.3rem; font-weight: 600; }
+.ask-form input,
+.ask-form select,
+.ask-form textarea {
+  font: inherit;
+  font-weight: 400;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--card-ink);
+}
+.ask-form textarea { resize: vertical; }
+.ask-form .small { margin: 0; font-size: 0.85rem; }
+.ask-form .button { justify-self: start; cursor: pointer; font: inherit; }
+.ask-form .trap { position: absolute; left: -9999px; }
+.ask-status { margin: 0; font-weight: 600; }
+
 footer .credit { margin: 0.3rem 0 0; font-size: 0.8rem; opacity: 0.8; }
 
 .steps { padding-left: 1.2rem; }

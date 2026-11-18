@@ -18,6 +18,7 @@
       <a href="#paths">Paths</a>
       <a href="#steps">Steps</a>
       <a href="#pay">Pay</a>
+      <a href="#ask">Ask</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -84,6 +85,35 @@
       <a class="button" href="https://wa.me/4915567550791?text=Hello%20Lantern.%20I%20have%20paid%2016000%20rupees." target="_blank" rel="noopener">Send payment proof on WhatsApp</a>
     </section>
 
+    <section id="ask">
+      <h2>Ask a question</h2>
+      <p>Send us your question. We reply in 1 to 3 days on WhatsApp or by email.</p>
+      <form class="ask-form" id="ask-form">
+        <label>Your name
+          <input name="name" required maxlength="100" autocomplete="name">
+        </label>
+        <label>WhatsApp number or email
+          <input name="contact" required maxlength="150">
+        </label>
+        <label>Path
+          <select name="path">
+            <option>Bachelor</option>
+            <option>Master</option>
+            <option>Ausbildung</option>
+            <option>Job seeker visa</option>
+            <option>Not sure yet</option>
+          </select>
+        </label>
+        <label>Your question
+          <textarea name="question" required maxlength="2000" rows="5"></textarea>
+        </label>
+        <input class="trap" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <p class="small">We use your details only to answer your question.</p>
+        <button class="button" type="submit">Send question</button>
+        <p class="ask-status" id="ask-status" role="status"></p>
+      </form>
+    </section>
+
     <section id="contact">
       <h2>Contact</h2>
       <p>Zameeruddin Mohammed</p>
@@ -99,6 +129,26 @@
     <p>Lantern. One-time fee 16000 rupees. Not a university and not the embassy.</p>
     <p class="credit">Photos: <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a></p>
   </footer>
+
+  <script>
+    const ASK_URL = "https://script.google.com/macros/s/AKfycbxqkfFV43yZzst_JJJaBYqfMmhHoZj2160lnVabVVpDpr9nYaFpDmh1vgby20lxNNXi/exec";
+    const askForm = document.getElementById("ask-form");
+    const askStatus = document.getElementById("ask-status");
+    askForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const button = askForm.querySelector("button");
+      button.disabled = true;
+      askStatus.textContent = "Sending...";
+      try {
+        await fetch(ASK_URL, { method: "POST", mode: "no-cors", body: new URLSearchParams(new FormData(askForm)) });
+        askForm.reset();
+        askStatus.textContent = "Thank you. We got your question and reply in 1 to 3 days.";
+      } catch (error) {
+        askStatus.textContent = "Sending failed. Please write to us on WhatsApp: +49 155 6755 0791.";
+      }
+      button.disabled = false;
+    });
+  </script>
 
   <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c9357cb781af45b69df3bd4b4e4dff5b"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
